@@ -1,0 +1,71 @@
+/* ===================================== */
+/* DASHLYTICS PREMIUM DARK THEME */
+/* ===================================== */
+
+/* Page background */
+.main {
+    background-color: #0E1117;
+}
+
+/* Padding like SaaS */
+.block-container {
+    padding: 2.5rem 3rem;
+}
+
+/* Sidebar */
+section[data-testid="stSidebar"] {
+    background-color: #161B22;
+    border-right: 1px solid #2d333b;
+}
+
+/* Navbar */
+.navbar {
+    background: #161B22;
+    padding: 16px 24px;
+    border-radius: 14px;
+    border: 1px solid #2d333b;
+    margin-bottom: 24px;
+}
+
+/* Card */
+.card {
+    background: #161B22;
+    padding: 22px;
+    border-radius: 18px;
+    border: 1px solid #2d333b;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.45);
+    margin-bottom: 20px;
+}
+
+/* KPI card */
+.kpi {
+    background: #161B22;
+    border-radius: 14px;
+    padding: 16px;
+    text-align: center;
+    border: 1px solid #2d333b;
+}
+
+/* Buttons */
+.stButton>button {
+    background: linear-gradient(90deg,#4f46e5,#6366f1);
+    color: white;
+    border-radius: 10px;
+    font-weight: 600;
+    height: 38px;
+}
+
+/* Inputs */
+.stTextInput input,
+.stSelectbox div {
+    background: #0E1117 !important;
+    border-radius: 10px !important;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-thumb {
+    background: #30363d;
+}
