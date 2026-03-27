@@ -1,0 +1,11 @@
+# Ignore secret files
+.env
+.env.*
+*.env
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Streamlit
+.streamlit/
