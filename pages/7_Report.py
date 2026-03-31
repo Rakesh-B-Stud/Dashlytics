@@ -104,13 +104,24 @@ Model Results:
 # AI Generation
 # =========================================================
 def generate_ai_text():
+    text = clean_markdown(text)
+    doc  = SimpleDocTemplate(
+        "Dashlytics_Report.pdf",
+        leftMargin=60, rightMargin=60,
+        topMargin=60,  bottomMargin=60,
+        title=f"Dashlytics Report — {st.session_state.get('dataset_name', 'Dataset')}",
+        author="Dashlytics",
+        subject="Automated Analytics Report",
+        creator="Dashlytics — Automated Analytics, Intelligent Reporting")
     response = client.chat.completions.create(
         model="meta-llama/llama-3-70b-instruct",
         messages=[{"role": "user", "content": build_prompt()}],
         temperature=0.3,
         max_tokens=6000
     )
+
     return response.choices[0].message.content
+    
 
 # =========================================================
 # Save charts
