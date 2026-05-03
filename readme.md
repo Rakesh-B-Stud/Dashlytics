@@ -63,9 +63,11 @@ Dashlytics is an AI-powered data analytics platform that automates the complete 
 
 ## 📸 Application Preview
 
-*(Add your screenshots here)*
 
 ```md
+<img src="assets/images/welcome page.png" width="80%">
+<img src="assets/images/cleaning.png" width="80%">
+<img src="assets/images/models.png" width="80%">
 <img src="assets/images/dashboard.png" width="80%">
 <img src="assets/images/report.png" width="80%">
 ```
