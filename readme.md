@@ -66,16 +66,20 @@ Dashlytics is an AI-powered data analytics platform that automates the complete 
 <p align="center">
 <h1 align="center">Welcome Page</h1>
 <img src="assets/images/welcomepage.png" width="80%">
-
+</p>
+<p align="center">
 <h1 align="center">Data Cleaning</h1>
 <img src="assets/images/cleaning.png" width="80%">
-
+</p>
+<p align="center">
 <h1 align="center">Models</h1>
 <img src="assets/images/models.png" width="80%">
-
+</p>
+<p align="center">
 <h1 align="center">Dashboard</h1>
 <img src="assets/images/dashboard.png" width="80%">
-
+</p>
+<p align="center">
 <h1 align="center">Report Generation</h1>
 <img src="assets/images/report.png" width="80%">
 </p>
