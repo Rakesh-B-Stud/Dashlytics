@@ -124,10 +124,7 @@ def generate_ai_text():
 # =========================================================
 # Save charts
 # =========================================================
-
 def save_images():
-    import plotly.io as pio
-    pio.kaleido.scope.chromium_executable = "/usr/bin/chromium-browser"
     paths = []
     for i, fig in enumerate(figs):
         fig.update_layout(
@@ -143,7 +140,7 @@ def save_images():
 # Strip markdown
 # =========================================================
 def clean_markdown(text):
-    if text is None:  
+    if text is None:   
         return ""
 
     text = re.sub(r'\*\*(.*?)\*\*', r'\1', text)
