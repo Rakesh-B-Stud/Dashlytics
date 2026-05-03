@@ -104,23 +104,21 @@ Model Results:
 # AI Generation
 # =========================================================
 def generate_ai_text():
-    text = clean_markdown(text)
-    doc  = SimpleDocTemplate(
-        "Dashlytics_Report.pdf",
-        leftMargin=60, rightMargin=60,
-        topMargin=60,  bottomMargin=60,
-        title=f"Dashlytics Report — {st.session_state.get('dataset_name', 'Dataset')}",
-        author="Dashlytics",
-        subject="Automated Analytics Report",
-        creator="Dashlytics — Automated Analytics, Intelligent Reporting")
-    response = client.chat.completions.create(
-        model="meta-llama/llama-3-70b-instruct",
-        messages=[{"role": "user", "content": build_prompt()}],
-        temperature=0.3,
-        max_tokens=6000
-    )
+    try:
+        response = client.chat.completions.create(
+            model="meta-llama/llama-3-70b-instruct",
+            messages=[{"role": "user", "content": build_prompt()}],
+            temperature=0.4,
+            max_tokens=6000
+        )
 
-    return response.choices[0].message.content
+        if response and response.choices:
+            return response.choices[0].message.content
+
+        return "Error: Empty response from AI."
+
+    except Exception as e:
+        return f"Error generating report: {str(e)}"
     
 
 # =========================================================
@@ -142,12 +140,16 @@ def save_images():
 # Strip markdown
 # =========================================================
 def clean_markdown(text):
+    if text is None:  
+        return ""
+
     text = re.sub(r'\*\*(.*?)\*\*', r'\1', text)
     text = re.sub(r'__(.*?)__',     r'\1', text)
     text = re.sub(r'\*(.*?)\*',     r'\1', text)
     text = re.sub(r'_(.*?)_',       r'\1', text)
     text = re.sub(r'^#{1,6}\s+',    '',    text, flags=re.MULTILINE)
     text = re.sub(r'^\s*[-•]\s+',   '',    text, flags=re.MULTILINE)
+
     return text
 
 # =========================================================
